@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>nl.edubits.cec</groupId>
+	<artifactId>cec-cdi</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>CDI extension for interfacing with cec-client</description>
+	<url>https://github.com/Edubits/cec-cdi</url>
+	
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	
+	<developers>
+		<developer>
+			<name>Robin Eggenkamp</name>
+			<email>robin@edubits.nl</email>
+			<organization>Edubits</organization>
+			<organizationUrl>http://edubits.nl</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git@github.com:Edubits/cec-cdi.git</connection>
+		<developerConnection>scm:git:git@github.com:Edubits/cec-cdi.git</developerConnection>
+		<url>git@github.com:Edubits/cec-cdi.git</url>
+	</scm>
+
+	<properties>
+		<javase.version>1.8</javase.version>
+		<javaee.version>7.0</javaee.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${javaee.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<!-- Set the Java compiler versions -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${javase.version}</source>
+					<target>${javase.version}</target>
+				</configuration>
+			</plugin>
+	
+			<!-- Configure the jar with the binaries -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+						<manifestEntries>
+							<URL>${project.url}</URL>
+							<Extension-Name>${project.artifactId}</Extension-Name>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

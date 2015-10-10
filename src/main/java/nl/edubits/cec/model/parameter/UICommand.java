@@ -1,0 +1,78 @@
+package nl.edubits.cec.model.parameter;
+
+public enum UICommand implements Parameter {
+	SELECT(0x00),
+	UP(0x01),
+	DOWN(0x02),
+	LEFT(0x03),
+	RIGHT(0x04),
+	RIGHT_UP(0x05),
+	RIGHT_DOWN(0x06),
+	LEFT_UP(0x07),
+	LEFT_DOWN(0x08),
+	ROOT_MENU(0x09),
+	SETUP_MENU(0x0A),
+	CONTENTS_MENU(0x0B),
+	FAVORITE_MENU(0x0C),
+	EXIT(0x0D),
+	// OxOE-0x1F: Reserved
+	NUMBER0(0x20),
+	NUMBER1(0x21),
+	NUMBER2(0x22),
+	NUMBER3(0x23),
+	NUMBER4(0x24),
+	NUMBER5(0x25),
+	NUMBER6(0x26),
+	NUMBER7(0x27),
+	NUMBER8(0x28),
+	NUMBER9(0x29),
+	DOT(0x2A),
+	ENTER(0x2B),
+	CLEAR(0x2C),
+	// 0x2D-0x2E: Reserved
+	NEXT_FAVORITE(0x2F),
+	CHANNEL_UP(0x30),
+	CHANNEL_DOWN(0x31),
+	PREVIOUS_CHANNEL(0x32),
+	SOUND_SELECT(0x33),
+	INPUT_SELECT(0x34),
+	DISPLAY_INFORMATION(0x35),
+	HELP(0x36),
+	PAGE_UP(0x37),
+	PAGE_DOWN(0x38),
+	// 0x39-0x3F: Reserved
+	POWER(0x40),
+	VOLUME_UP(0x41),
+	VOLUME_DOWN(0x42),
+	MUTE(0x43),
+	PLAY(0x44),
+	STOP(0x45),
+	PAUSE(0x46),
+	RECORD(0x47),
+	REWIND(0x48),
+	FAST_FORWARD(0x49),
+	EJECT(0x4A),
+	FORWARD(0x4B),
+	BACKWARD(0x4C),
+	STOP_RECORD(0x4D),
+	PAUSE_RECORD(0x4E),
+	// 0x4F: Reserved
+	// 0x50-0x70: Not implemented
+	BLUE(0x71),
+	RED(0x72),
+	GREEN(0x73),
+	YELLOW(0x74),
+	// 0x75-0xFF: Not implemented
+	UNKNOWN(-1);
+
+	private final int id;
+
+	UICommand(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public int getId() {
+		return id;
+	}
+}
