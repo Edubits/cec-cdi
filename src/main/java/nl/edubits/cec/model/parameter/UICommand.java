@@ -58,6 +58,7 @@ public enum UICommand implements Parameter {
 	PAUSE_RECORD(0x4E),
 	// 0x4F: Reserved
 	// 0x50-0x70: Not implemented
+	POWER_ON(0x6D),
 	BLUE(0x71),
 	RED(0x72),
 	GREEN(0x73),

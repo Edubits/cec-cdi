@@ -1,5 +1,6 @@
 package nl.edubits.cec.model;
 
+import java.util.Collections;
 import java.util.List;
 
 import nl.edubits.cec.model.parameter.Parameter;
@@ -19,6 +20,14 @@ public class Message {
 		this.operator = operator;
 		this.parameters = parameters;
 		this.rawMessage = rawMessage;
+	}
+
+	public Message(Device source, Device destination, Operator operator, List<Parameter> parameters) {
+		this(source, destination, operator, parameters, "");
+	}
+
+	public Message(Device source, Device destination, Operator operator) {
+		this(source, destination, operator, Collections.emptyList());
 	}
 
 	public Device getSource() {

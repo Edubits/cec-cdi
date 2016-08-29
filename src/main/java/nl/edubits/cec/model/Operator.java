@@ -1,7 +1,9 @@
 package nl.edubits.cec.model;
 
+import static nl.edubits.cec.model.parameter.ParameterType.AUDIO_STATUS;
 import static nl.edubits.cec.model.parameter.ParameterType.POWER_STATUS;
 import static nl.edubits.cec.model.parameter.ParameterType.RAW;
+import static nl.edubits.cec.model.parameter.ParameterType.SYSTEM_AUDIO_STATUS;
 import static nl.edubits.cec.model.parameter.ParameterType.UI_COMMAND;
 
 import java.util.Arrays;
@@ -41,9 +43,9 @@ public enum Operator {
 	REPORT_POWER_STATUS(0x90, POWER_STATUS),
 
 	GIVE_AUDIO_STATUS(0x71),
-	SET_SYSTEM_AUDIO_MODE(0x72, POWER_STATUS),
+	SET_SYSTEM_AUDIO_MODE(0x72, SYSTEM_AUDIO_STATUS),
 	GIVE_SYSTEM_AUDIO_MODE_STATUS(0x7D),
-	REPORT_AUDIO_STATUS(0x7A, POWER_STATUS),
+	REPORT_AUDIO_STATUS(0x7A, AUDIO_STATUS),
 	SYSTEM_AUDIO_MODE_REQUEST(0x70, RAW),
 	SYSTEM_AUDIO_MODE_STATUS(0x7E, RAW),
 

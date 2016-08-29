@@ -32,7 +32,7 @@ public class CecConnection implements Runnable {
 
 	private static final Logger logger = Logger.getLogger(CecConnection.class.getName());
 
-	private static final String COMMAND = "/usr/local/bin/cec-client -d 8 -t r -o ThuisServerTV";
+	private static final String COMMAND = "/usr/bin/cec-client -d 8 -t r -o ThuisServerTV";
 	private static final int SLEEP_BETWEEN_RETRIES = 1000;
 	private static final int EMPTY_STREAM_DELAY = 500;
 	private static final int MAX_RETRY_COUNT = 10;
